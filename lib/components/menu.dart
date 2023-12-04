@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examen1/pages/home_page.dart';
 
+import '../pages/regions_page.dart';
+
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
@@ -47,19 +49,19 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          // ListTile(
-          //   leading: const Icon(Icons.map),
-          //   title: const Text('Régions'),
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) =>
-          //             // const RegionPage(title: "Recherche par Region"),
-          //       ),
-          //     );
-          //   },
-          // ),
+          ListTile(
+            leading: const Icon(Icons.map),
+            title: const Text('Régions'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      const RegionPage(title: "Recherche par Region"),
+                ),
+              );
+            },
+          ),
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Paramètres'),
