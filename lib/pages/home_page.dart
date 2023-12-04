@@ -30,10 +30,12 @@ class HomePage extends StatelessWidget {
       ),
           Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 20),
-                
+
+                // Container text
                 Container(
                   color: Colors.blue,
                   // height: 550, // Définissez la hauteur souhaitée
