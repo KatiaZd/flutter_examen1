@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: <Widget> [
           Container(
-        margin: EdgeInsets.zero, // Définir la marge à zéro
+        margin: EdgeInsets.zero, // Définir la marge au dessus de la video à zéro
         child: const VideoHero(),
       ),
           Center(
@@ -33,11 +33,33 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 20),
+                
                 Container(
-                  height: 550, // Définissez la hauteur souhaitée
-                  child: const SizedBox
-                      .shrink(), // Ajoutez d'autres composants ici, si nécessaire
+                  color: Colors.blue,
+                  // height: 550, // Définissez la hauteur souhaitée
+                  width: double.infinity,
+                  child: const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text( 
+                      "I. Nos régions",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                      )
+                    )
+                   ), // Ajoutez d'autres composants ici, si nécessaire
                 ),
+                
+                const Text(
+                  "Poudre gummi ours beignet sucette pudding réglisse sucre prune. Gâteau aux jujubes gummi ours caramels pudding gâteau à l'avoine biscuit croissant à la guimauve. Bonbons cannes de bonbon glaçage gâteau aux carottes gummi ours gâteau au chocolat. Gâteau gâteau à l'avoine barbe à papa gelée muffin réglisse rouleau sucré sucré. Tarte au chocolat en poudre tiramisu gummies gâteau aux fruits halva gaufrette guimauve. Tarte aux pommes bonbon tootsie roll gaufrette sablé pain d'épice gâteau à l'avoine",
+                  style: TextStyle(color: Colors.black),
+                ),
+
+
+
+
+
+
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
