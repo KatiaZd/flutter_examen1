@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
               // crossAxisAlignment: CrossAxisAlignment.start,
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const SizedBox(height: 20),
+                // const SizedBox(height: 0),
 
                 // Container text
                 Container(
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text( 
-                      "I. Nos régions",
+                      "I. Nos Régions",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15.0,
@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              const RegionPage(title: "Region Page")),
+                              const RegionPage(title: "Recherche par Region")),
                     );
                   },
                   style: ButtonStyle(
@@ -80,9 +80,24 @@ class HomePage extends StatelessWidget {
                       Icon(Icons.search, color: Colors.blueAccent),
                       SizedBox(width: 5),
                       Text("Rechercher Par Région", style: TextStyle(color: Colors.blueAccent)),
-                  ],
+                    ],
                   ),
                 ),
+
+                const SizedBox(height: 30),
+                Container(
+                  padding: const EdgeInsets.all(20.0),
+                  child: const Text(
+                    "Croissant garniture muffin poudre beignet caramels beignet dessert. Muffin cannes de bonbon pain d'épice réglisse chocolat gâteau danois sablé. Gâteau aux fruits dessert glace bonbon gâteau au chocolat. Gâteau aux carottes, glace au caramel, gâteau à la réglisse. Tootsie roll cheesecake gâteau aux carottes griffe d'ours garniture tootsie roll sucre prune. Guimauve, réglisse.",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 10,
+                    )
+
+                  )
+                )
+
+
               ],
             ),
           ),
