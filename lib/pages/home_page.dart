@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       drawer: const AppDrawer(),
-      body: Stack(
+      body: ListView(
         children: <Widget> [
           Container(
         margin: EdgeInsets.zero, // Définir la marge au dessus de la video à zéro
@@ -30,8 +30,8 @@ class HomePage extends StatelessWidget {
       ),
           Center(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 20),
 
