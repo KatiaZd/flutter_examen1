@@ -51,17 +51,15 @@ class HomePage extends StatelessWidget {
                     )
                    ), // Ajoutez d'autres composants ici, si nécessaire
                 ),
-                
-                const Text(
-                  "Poudre gummi ours beignet sucette pudding réglisse sucre prune. Gâteau aux jujubes gummi ours caramels pudding gâteau à l'avoine biscuit croissant à la guimauve. Bonbons cannes de bonbon glaçage gâteau aux carottes gummi ours gâteau au chocolat. Gâteau gâteau à l'avoine barbe à papa gelée muffin réglisse rouleau sucré sucré. Tarte au chocolat en poudre tiramisu gummies gâteau aux fruits halva gaufrette guimauve. Tarte aux pommes bonbon tootsie roll gaufrette sablé pain d'épice gâteau à l'avoine",
-                  style: TextStyle(color: Colors.black),
-                ),
 
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  child :const Text(
+                    "Poudre gummi ours beignet sucette pudding réglisse sucre prune. Gâteau aux jujubes gummi ours caramels pudding gâteau à l'avoine biscuit croissant à la guimauve. Bonbons cannes de bonbon glaçage gâteau aux carottes gummi ours gâteau au chocolat. Gâteau gâteau à l'avoine barbe à papa gelée muffin réglisse rouleau sucré sucré. Tarte au chocolat en poudre tiramisu gummies gâteau aux fruits halva gaufrette guimauve. Tarte aux pommes bonbon tootsie roll gaufrette sablé pain d'épice gâteau à l'avoine",
+                    style: TextStyle(color: Colors.black),
+                  ),
 
-
-
-
-
+              ) ,
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -79,7 +77,7 @@ class HomePage extends StatelessWidget {
                     children: [
                       Icon(Icons.search, color: Colors.blueAccent),
                       SizedBox(width: 5),
-                      Text("Rechercher Par Région", style: TextStyle(color: Colors.blueAccent)),
+                      Text("Rechercher Par Région", style: TextStyle(color: Colors.black)),
                     ],
                   ),
                 ),
