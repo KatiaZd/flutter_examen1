@@ -30,18 +30,13 @@ class HomePage extends StatelessWidget {
       ),
           Center(
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                // const SizedBox(height: 0),
-
-                // Container text
                 Container(
                   color: Colors.blue,
                   // height: 550, // Définissez la hauteur souhaitée
                   width: double.infinity,
                   child: const Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     child: Text( 
                       "I. Nos Régions",
                       style: TextStyle(
@@ -60,6 +55,7 @@ class HomePage extends StatelessWidget {
                   ),
 
               ) ,
+              const SizedBox (height: 50),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
