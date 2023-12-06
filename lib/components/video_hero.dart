@@ -13,6 +13,17 @@ class _VideoHeroState extends State<VideoHero> {
   late Future<void> _initializeVideoPlayerFuture;
 
   @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        buildVideoPlayer(),
+        buildTextWidgets(),
+        buildFloatingActionButton(),
+      ],
+    );
+  }
+
+  @override
   void initState() {
     super.initState();
 
@@ -30,73 +41,85 @@ class _VideoHeroState extends State<VideoHero> {
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        FutureBuilder(
-          future: _initializeVideoPlayerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return AspectRatio(
-                aspectRatio: _videoPlayerController.value.aspectRatio,
-                child: VideoPlayer(_videoPlayerController),
-              );
-            } else {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          },
-        ),
-        
-        const Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'France Data',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 5,
-                ),
-              ),
-              SizedBox(height: 8.0),
-              Text(
-                'Atlas des données de France',
-                style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 5,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          bottom: 16.0,
-          right: 16.0,
-          child: FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                if (_videoPlayerController.value.isPlaying) {
-                  _videoPlayerController.pause();
-                } else {
-                  _videoPlayerController.play();
-                }
-              });
-            },
-            backgroundColor: const Color.fromARGB(255, 152, 191, 253),
-            child: Icon(
-              _videoPlayerController.value.isPlaying
-                  ? Icons.pause
-                  : Icons.play_arrow,
-              color: const Color.fromARGB(255, 254, 254, 254),
-            ),
-          ),
-        ),
-      ],
+  Widget buildVideoPlayer() {
+    return FutureBuilder(
+      future: _initializeVideoPlayerFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return AspectRatio(
+            aspectRatio: _videoPlayerController.value.aspectRatio,
+            child: VideoPlayer(_videoPlayerController),
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      },
     );
   }
+
+ Widget buildTextWidgets() {
+  return Positioned(
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    child: Center(
+      child: ListView(
+        shrinkWrap: true,
+        children: const [
+          Text(
+            'France Data',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 5,
+            ),
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            'Atlas des données de France',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 15.0,
+              color: Colors.white,
+              letterSpacing: 5,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
+  Widget buildFloatingActionButton() {
+    return Positioned(
+      bottom: 16.0,
+      right: 16.0,
+      child: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            if (_videoPlayerController.value.isPlaying) {
+              _videoPlayerController.pause();
+            } else {
+              _videoPlayerController.play();
+            }
+          });
+        },
+        backgroundColor: const Color.fromARGB(255, 114, 166, 255),
+        child: Icon(
+          _videoPlayerController.value.isPlaying
+              ? Icons.pause
+              : Icons.play_arrow,
+          color: const Color.fromARGB(255, 254, 254, 254),
+        ),
+      ),
+    );
+  }
+
+
 }
