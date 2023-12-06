@@ -6,6 +6,7 @@ L'application mobile 'France Data' est conçu pour présenter des informations s
 
 ## Fonctionnalités
 - Lecture d'une vidéo en arrière-plan
+- Accès rapide aux différentes sections grâce à un menu de navigation dédié
 - Présentation des informations sur les régions de France (à venir)
 - Possibilité de rechercher par région (à venir)
 
