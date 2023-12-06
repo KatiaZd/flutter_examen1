@@ -49,6 +49,7 @@ class _VideoHeroState extends State<VideoHero> {
             }
           },
         ),
+        
         const Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,6 +60,7 @@ class _VideoHeroState extends State<VideoHero> {
                   color: Colors.white,
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
+                  letterSpacing: 5,
                 ),
               ),
               SizedBox(height: 8.0),
@@ -66,6 +68,7 @@ class _VideoHeroState extends State<VideoHero> {
                 'Atlas des données de France',
                 style: TextStyle(
                   color: Colors.white,
+                  letterSpacing: 5,
                 ),
               ),
             ],
